@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Trees: Binary Tree: In-Order Traversal</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Exercise: Binary Tree: In-Order Traversal">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="../../../../Assets/Collections.js"></script>
+        <script type="text/javascript" src="../../../../Assets/Nodes.js"></script>
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: Trees: Binary Tree: In-Order Traversal</h1>    
+        <p>
+            You are given a binary tree. <br>
+            You must return the In-Order traversal of the node values of that Binary Tree. <br>
+            Make your code iteratively instead of recursive.   <br>
+        </p>        
+        <div style="text-align: left;">
+            <canvas id="canvas" width="200" height="155"></canvas>
+        </div> 
+                    
+        <p>Time Complexity Expected: O(N).</p>
+        <p>Space Complexity Expected: O(log N).</p>
+
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            Time Complexity: O(N). We visit each node in the tree.       
+        </p>
+        <p>Space Complexity: O(log N). Since we are using a stack. We will need a maximum of log N elements (including ancestors elements).</p>
+        <p>
+            <u>Explanation:</u>
+            In order to do this code run iteratively, we must store all the root elements; therefore, we will use a stack.
+            The idea is to store all te root elements. Then, process the left subtree.
+            Once the left subtree is processed, we will add the root value to the list.
+            Then, we repeat the process to the right subtree.
+        </p>
+        <script type="text/javascript" src="../../../../Assets/AppendMainToBody.js"></script> 
+        <script>
+                // Lazy code
+                var canvas = document.getElementById("canvas");
+                var canvasCenter = canvas.width / 2
+                drawLine(canvas, canvasCenter, 30, getAngleX(canvasCenter, 45), getAngleY(60, 45));
+                drawLine(canvas, getAngleX(canvasCenter, 45), getAngleY(60, 45), canvasCenter, getAngleY(60, 45) + 50);
+
+                drawCircleWithText(canvas, canvasCenter, 30, 30, "1");  
+                drawCircleWithText(canvas, getAngleX(canvasCenter, 45), getAngleY(60, 45) , 30, "2");  
+                drawCircleWithText(canvas, canvasCenter, getAngleY(60, 45) + 50 , 30, "3");
+
+            </script>       
+    </body>
+</html>

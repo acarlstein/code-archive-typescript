@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Linked List: Add Two Non-Negative Numbers</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Add Two Non-Negative Numbers">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: Linked List: Add Two Non-Negative Numbers</h1>
+        <p>
+            You are given two linked lists which are not empty and represent two non-negative numbers. <br> 
+            The digits of these numbers are stored in reverse order.
+            Each node contains a single digit.
+            Write a code that will add two numbers and return a single linked list.
+        </p>        
+        <p>
+            For example, <br/>
+            Linked List 1: [2] -> [3] -> [4]<br/>
+            Linked List 2: [5] -> [6] -> [7]<br/>
+            Linked List Result: [7] -> [9] -> [1]<br/><br/>
+            
+            Note: Please note that 4 + 7 = 11 but we store only one digit, the last digit will be carried to the next summation.<br/>
+            Linked List 1: [4] -> [2] <br/>
+            Linked List 2: [7] -> [6] <br/>
+            Linked List Result: [1] -> [9] <br/>
+            4 + 7 = 11; therefore, we store 1 and the other 1 we do 2 + 6 + 1 = 9<br/><br/>
+        </p>
+            
+        <p>Time Complexity Expected: O(N).</p>
+        <p>Space Complexity Expected: O(N).</p>
+
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            Time Complexity (to find each substring): O(N) = O(N<sub>1</sub>) + O(N<sub>2</sub>) <br>
+            where N<sub>1</sub> represent the length of List 1 (L<sub>1</sub>) and N<sub>2</sub> represents the length of List 2 (L<sub>2</sub>).
+        </p>
+        <p>Space Complexity (to find each substring): O(N) = O(1) + O(N). O(1) for the variables and o(N) for the result.</p>
+        <p>
+            <u>Explanation:</u><br />
+            The digits are stored in reverse order; therefore, we can traverse both lists and add their values.<br>
+            The only difference is that when adding two numbers, if we exceed 10, we will only store the last digit.<br>
+            The other digit will be carried to the next summation.
+            The process will repeat.
+        </p>
+        <script type="text/javascript" src="../../../Assets/AppendMainToBody.js"></script>        
+    </body>
+</html>

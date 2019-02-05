@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Breadth First Search: Binary Trees: Symmetric Tree Around Its Center</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Exercise: Breadth First Search: Binary Trees: Symmetric Tree Around Its Center">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../../Assets/css/default.css">
+        <link rel="stylesheet" type="text/css" href="../../../../Assets/css/tree.css">
+        <script type="text/javascript" src="../../../../Assets/Collections.js"></script>
+        <script type="text/javascript" src="../../../../Assets/Nodes.js"></script>
+       
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body onload="">
+        <h1>Exercise: Breadth First Search: Binary Trees: Symmetric Tree Around Its Center</h1> 
+        <p>
+            Write a code that will verify if a binary tree is symmetric around its center.<br>
+            In other words, verify if the binary tree is a mirror of itself.<br>
+            Note: The solution can be recursive.<br>
+        </p>        
+ 
+        <div>
+            <div style="display: inline-block; text-align: center;">
+                <p><b>Symmetric Binary Tree</b></p>
+                <div class="tree left">
+                    <ul>
+                        <li>
+                            <div>1</div>
+                            <ul>
+                                <li>
+                                    <div>2</div>
+                                    <ul>
+                                        <li>
+                                            <div>3</div>
+                                        </li>
+                                        <li>
+                                            <div>4</div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div>2</div>
+                                    <ul>
+                                        <li>
+                                            <div>4</div>
+                                        </li>
+                                        <li>
+                                            <div>3</div>
+                                        </li>
+                                    </ul>                                    
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <p>
+                    [1, 2, 2, 3, 4, 4, 3]<br/>
+                </p>
+            </div>
+            <div style="display: inline-block; text-align: center;">
+                <p><b>Non-symmetric Binary Tree</b></p>
+                <div class="tree left">
+                    <ul>
+                        <li>
+                            <div>1</div>
+                            <ul>
+                                <li>
+                                    <div>2</div>
+                                    <ul>
+                                        <li>
+                                            <div>3</div>
+                                        </li>
+                                        <li>
+                                            <div>null</div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div>2</div>
+                                    <ul>
+                                        <li>
+                                            <div>3</div>
+                                        </li>
+                                        <li>
+                                            <div>null</div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <p>
+                    [1, 2, 2, 3, null, 3, null]<br/>
+                </p>
+            </div>
+        </div>
+        
+        <p>Time Complexity Expected: O(N).</p>
+        <p>Space Complexity Expected: O(N).</p>
+
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            Time Complexity: O(N) = O(N<sub>1</sub>) + O(N<sub>2</sub>) where N<sub>1</sub> and N<sub>2</sub> are the number of nodes of each tree.<br>        
+        </p>
+        <p>Space Complexity: O(N). Each execution of the function is O(1); however, this function is called recursivelly. Therefore it becomes O(N).</p>
+        <p>
+            <u>Explanation:</u><br />
+            Beginning with the root node, we are going start exploring to the left and right pointer.
+            <u>Example:</u>
+
+        </p>
+        <script type="text/javascript" src="../../../../Assets/AppendMainToBody.js"></script> 
+    </body>
+</html>

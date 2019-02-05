@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Trees: Prefix Tree: Implement Trie</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Exercise: Trees: Prefix Tree: Implement Trie">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../../Assets/css/default.css">
+        <link rel="stylesheet" type="text/css" href="../../../../Assets/css/tree.css">
+        <script type="text/javascript" src="../../../../Assets/Collections.js"></script>
+        <script type="text/javascript" src="../../../../Assets/Nodes.js"></script>
+       
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body onload="">
+        <h1>Exercise: Trees: Prefix Tree: Implement Trie</h1> 
+        <h2>Page in construction</h2>
+        <p>
+            Trie trees are also called prefix trees, digital trees and sometimes radix trees.<br>
+            Trie trees are similar to binary search tree; however, the position of the nodes are defined by association.<br>
+            Common applications for a trie tree is storying a predictive text or automcomplete dictionary commonly used on devices such as smartphones.<br>
+            The easy way to understand a prefix tree is to see a visual example of one:
+        </p>         
+        <div>
+            <div style="display: inline-block; text-align: center;">
+                <p><b>Trie tree (aka. Prefix tree, aka. Digital tree, aka. Radix Tree)</b></p>
+                <div class="tree left">
+                    <ul>
+                        <li>
+                            <div>root</div>
+                            <ul>
+                                <li>
+                                    <div>t</div>
+                                    <ul>
+                                        <li>
+                                            <div>to</div>
+                                        </li>
+                                        <li>
+                                            <div>te</div>
+                                            <ul>
+                                                <li>
+                                                    <div>tea</div>
+                                                </li>
+                                                <li>
+                                                    <div>ted</div>
+                                                </li>
+                                                <li>
+                                                    <div>ten</div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div>a</div>
+                                </li>
+                                <li>
+                                    <div>i</div>
+                                    <ul>
+                                        <li>
+                                            <div></div>
+                                        </li>
+                                        <li>
+                                            <div>in</div>
+                                            <ul>
+                                                <li>
+                                                    <div>inn</div>
+                                                </li>
+                                                <li>
+                                                    <div></div>
+                                                </li>
+                                            </ul>  
+                                        </li>
+                                    </ul>                                    
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <p>
+                    Keys: ["a", "to", "tea", "ted", "ten", "i", "in", "inn"]<br/>
+                </p>
+            </div>
+        </div>
+        <p>
+            For this exercise, you are asked to implement a Trie object that has insert, search, and startsWith methods.<br>
+            Assume that that all inputs consists of lower case letters from a to z.<br>
+        </p>
+
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            Time Complexity: O(N) = O(N<sub>1</sub>) + O(N<sub>2</sub>) where N<sub>1</sub> and N<sub>2</sub> are the number of nodes of each tree.<br>        
+        </p>
+        <p>Space Complexity: O(N). Each execution of the function is O(1); however, this function is called recursivelly. Therefore it becomes O(N).</p>
+        <p>
+            <u>Example:</u>
+        </p>
+        <script type="text/javascript" src="../../../../Assets/AppendMainToBody.js"></script> 
+    </body>
+</html>

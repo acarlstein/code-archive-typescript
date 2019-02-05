@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Math: Making Change</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Exercise: Math: Making Change">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../Assets/css/default.css">
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: Math: Making Change</h1>
+        <p>
+            We are given certain amount that represent a currency.<br>
+            Assume you have an ATM that can use coins.<br>
+            We are asked to determine the minumum number of coins required to make that exact amount in change.<br>
+            <u>Note:</u> The coins system that we can use are 1, 5, 10, and 25 cents.            
+        </p>        
+        <p>
+            For example:
+        </p>
+        <pre>
+            let coinSystem : number[] = [1, 5, 10, 25]; // In Cents
+            let amount : number = 32;
+        </pre>
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            <u>Explanation:</u><br />
+            The current solution is a recursive one.<br>
+            In each recursion, will receive a new amount which would be the previous amount minus the biggest coin in the coin system in sequence.<br>
+            Below is a table that will show the idea behind:
+            <table>
+                <tr>
+                    <th>Iteration</th>
+                    <th>Amount</th>
+                    <th>Current coin</th>
+                    <th>Coin counter</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>32</td>
+                    <td>25</td>
+                    <td>1 (25 cents)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>10</td>
+                    <td>1 (No change)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>2 (25 + 5)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>3 (25 + 5 + 1)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>4 (25 + 5 + 1 + 1)</td>
+                </tr>    
+            </table>
+            Result: 4 coins are needed.
+        </p>
+        <script type="text/javascript" src="../../../Assets/AppendMainToBody.js"></script>        
+    </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "typescript-game-engine",
+  "dependencies": {
+    "typescript": "^2.6.2"
+  }
+}

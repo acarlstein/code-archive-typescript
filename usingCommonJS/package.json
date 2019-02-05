@@ -1,0 +1,6 @@
+{
+  "name": "typescript-code-snippets",
+  "dependencies": {
+    "typescript": "^2.6.2"
+  }
+}

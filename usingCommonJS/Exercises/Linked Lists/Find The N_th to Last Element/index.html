@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Linked List: Find The Nth to Last Element</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Exercise: Linked List: Find The Nth to Last Element">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: Linked List: Find The N<sup>th</sup> to Last Element</h1>
+        <p>
+            You are given a linked lists for which you  don't know when it ends.<br> 
+            Linked List: [1]->[2]->[3]->...->[N]<br>
+        </p>        
+        <p>
+            You are asked to write a function which allows the user to find the N<sup>th</sup>-to-last element of such list.<br>
+            Example:
+        </p>
+        <pre>
+            list = [1]->[2]->[3]->[4]->[5]
+            Last element is [5].
+            
+            When n = 1, output = 4:             
+            [1]->[2]->[3]->{4}->[5]
+            
+            When n = 2, output = 3:
+            [1]->[2]->{3}->[4]->[5]
+
+            When n = 3, output = 2:
+            [1]->{2}->[3]->[4]->[5]
+        </pre>
+            
+        <p>Time Complexity Expected: O(N).</p>
+        <p>Space Complexity Expected: O(1).</p>
+
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            Time Complexity: O(N).<br>
+        </p>
+        <p>Space Complexity: O(1).</p>
+        <p>
+            <u>Solution:</u><br />
+            The trick here is to use two node pointers.<br>
+            First pointer, called current, will take care of tracking the current position in the linked list.<br>
+            The second pointer, called follower, will begin to follow the current pointer by a distance equals to the N<sup>th</sup> position.<br>
+            Using the example above, if N<sup>th</sup> value is 2, this means that recently the follower pointer will begin moving when there is a distance between it and the current pointer.
+        </p>
+        <script type="text/javascript" src="../../../Assets/AppendMainToBody.js"></script>        
+    </body>
+</html>

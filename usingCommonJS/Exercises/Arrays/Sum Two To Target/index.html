@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Arrays: Sum Two to Target</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Sum Two to Target">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: Arrays: Sum Two to Target</h1>
+        <p>You are given an array of numbers. <br> You are asked to return the indices of two elements that sum up to a specific target.</p>
+        <p><u>Note:</u> As a rule, you are not allowed to use a same element twice or more.</p>
+        <p>I.e: If you have elements [3, 5, 8, 13] and the target is 11 then 3 + 8 = 11; therefore, we return index 0 (for 3) and index 2 (for 8) in an array</p>
+        <pre>
+            let arr : number[] = [3, 5, 8, 13];
+            return [0, 2]; // returning index 0 and 2
+        </pre>
+    
+        <p>Time Complexity Expected: O(N) or better</p>
+        <p>Space Complexity Expected: O(N) or better</p>
+
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>Time Complexity: O(N). The array is traversed once.</p>
+        <p>Space Complexity: O(N). <br>
+            <ul>
+                <li>O(1) to create variables</li>            
+                <li>O(N) for the hashmap which will increate linearly due the increase of number of entries</li>
+                <li>O(N) = O(1) + O(N)</li>
+            </ul>
+        </p>
+        <script type="text/javascript" src="../../../Assets/AppendMainToBody.js"></script>        
+    </body>
+</html>

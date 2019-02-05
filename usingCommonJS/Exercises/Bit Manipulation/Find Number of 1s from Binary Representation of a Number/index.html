@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Bit Manipulation: Find Number of 1s from Binary Representation of a Number</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Exercise: Bit Manipulation: Find Number of 1s from Binary Representation of a Number">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../Assets/css/default.css">
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: Bit Manipulation: Find Number of 1s from Binary Representation of a Number</h1>
+        <p>
+            From the binary representation of a number, we wish to find the number of 1s.            
+        </p>        
+        <p>
+            For example:
+        </p>
+        <pre>
+            getNumberOfOnes(2) = 1  // 2 = 0b01
+            getNumberOfOnes(3) = 2  // 3 = 0b11
+            getNumberOfOnes(5) = 2  // 5 = 0b101
+            getNumberOfOnes(7) = 3  // 7 = 0b111
+            getNumberOfOnes(11) = 3 // 11 = 0b1011
+        </pre>
+        <p>Time Complexity Expected: O(N)</p>
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            There are two ways.<br>
+            
+            First, we sum the Last Significant Bit (LSB) which is the last bit to the right.<br>
+            How we do that? Well, there are two method:
+            <ul>
+                <li>
+                    Remainder method: Mod the number by two (num % 2). <br>
+                    If the number is even, we get 0. If the number is odd, we get 1.<br>
+                    Then, shift to the right by one the number to obtain the next LSB.<br>
+                </li>
+                <li>
+                    Bitwise method: Use the AND bitwise to obtain a result where all the bits are zero except the last one (LBS).<br>
+                    The operation is (num & 1).<br>
+                    Using the basic AND bitwise table and assuming x is a bit state, we see that:
+                    <table>
+                        <tr>
+                            <th>
+                                Operation
+                            </th>
+                            <th>
+                                Result
+                            </th>                                
+                        </tr>
+                        <tr>
+                            <td>x & 0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>x & 1</td>
+                            <td>x</td>
+                        </tr>
+                        <tr>
+                            <td>x & x</td>
+                            <td>x</td>
+                        </tr>        
+                    </table>
+                    Therefore, if we have a number in binary, it would work this way:<br>
+                    <table style="display: inline-block;"> 
+                        <tr>
+                            <td>&nbsp;0b1010101011</td>
+                        </tr>
+                        <tr>
+                            <td>&</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;0b0000000001</td>
+                        </tr>        
+                        <tr>
+                            <td>&nbsp;0b0000000001</td>
+                        </tr>            
+                    </table>
+                    <table style="display: inline-block;">
+                        <tr>
+                            <td>&nbsp;0b1010101010</td>
+                        </tr>
+                        <tr>
+                            <td>&</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;0b0000000001</td>
+                        </tr>        
+                        <tr>
+                            <td>&nbsp;0b0000000000</td>
+                        </tr>            
+                    </table>
+                    <br>
+                    Then, shift to the right by one the number to obtain the next LSB.
+                </li>
+            </ul>
+        </p>
+
+        <script type="text/javascript" src="../../../Assets/AppendMainToBody.js"></script>        
+    </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Math: Return All String Permutations</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Exercise: Math: Return All String Permutations">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../Assets/css/default.css">
+        <link rel="stylesheet" type="text/css" href="../../../Assets/css/tree.css">
+        <script type="text/javascript" src="../../../Assets/Utilities.js"></script>                 
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: Math: Return All String Permutations</h1>
+        <h2>In construction</h2>
+        <p>
+            We are given a string and we are asked to write a function that will returns all the permutations of the letters of such strinc.<br>            
+            For example:
+        </p>               
+        <pre>
+            let setStrings : string = "abc"
+            return ["abc", "acb", "bac", "bca", "cab", "cba"]
+        </pre>
+        <p>Hint: The solution can be built recursively.</p>
+        <!--
+        <p>Time Complexity Expected: O(2<sup>n</sup>)</p>
+        <p>Space Complexity Expected: O(1)</p>
+        -->
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            <u>Explanation:</u><br />
+            The following is a table showing the times that helperPermutationsBuilder gets call and the content of the attributes:<br>
+            The first time the method getStringPermutations calls the method helperPermutationsBuilder.<br>
+            <table>
+                <thead>
+                    <tr>
+                        <th><strong>SUFFIX</strong></th>
+                        <th><strong>PREFIX</strong></th>
+                        <th><strong>RESULT</strong></th>
+                        <th><strong>NOTE</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>""</td><td>"abc"</td><td>[]</td><td>suffix.length != 0</td></tr>
+                    <tr><td>"a"</td><td>"bc"</td><td>[]</td><td>suffix.length != 0.</td></tr>
+                    <tr><td>"ab"</td><td>"c"</td><td>[]</td><td>suffix.length != 0.</td></tr>
+                    <tr><td>"abc"</td><td>""</td><td>[]</td><td>suffix.length == 0. Add "abc" to result array.</td></tr>
+                    <tr><td>"ac"</td><td>"b"</td><td>["abc"]</td><td>suffix.length != 0.</td></tr>
+                    <tr><td>"acb"</td><td>""</td><td>["abc"]</td><td>suffix.length == 0. Add "acb" to result array.</td></tr>
+                    <tr><td>"b"</td><td>"ac"</td><td>["abc", "acb"]</td><td>suffix.length != 0.</td></tr>
+                    <tr><td>"ba"</td><td>"c"</td><td>["abc", "acb"]</td><td>suffix.length != 0.</td></tr>
+                    <tr><td>"bac"</td><td>""</td><td>["abc", "acb"]</td><td>suffix.length == 0. Add "bac" to result array.</td></tr>
+                    <tr><td>"bc"</td><td>"a"</td><td>["abc", "acb", "bac"]</td><td>suffix.length != 0.</td></tr>
+                    <tr><td>"bca"</td><td>""</td><td>["abc", "acb", "bac"]</td><td>suffix.length == 0. Add "bca" to result array.</td></tr>
+                    <tr><td>"c"</td><td>"ab"</td><td>["abc", "acb", "bac", "bca"]</td><td>suffix.length != 0.</td></tr>
+                    <tr><td>"ca"</td><td>"b"</td><td>["abc", "acb", "bac", "bca"]</td><td>suffix.length != 0.</td></tr>
+                    <tr><td>"cab"</td><td>""</td><td>["abc", "acb", "bac", "bca"]</td><td>suffix.length == 0. Add "cab" to result array.</td></tr>
+                    <tr><td>"cb"</td><td>"a"</td><td>["abc", "acb", "bac", "bca", "cab"]</td><td>suffix.length != 0</td></tr>
+                    <tr><td>"cba"</td><td>""</td><td>["abc", "acb", "bac", "bca", "cba"]</td><td>suffix.length == 0. Add "cba" to result array.</td></tr>
+                    <tr><td>-</td><td>-</td><td>["abc", "acb", "bac", "bca", "cab", "cba"]</td><td>End of recursion</td></tr>
+                </tbody>
+            </table>
+            Notices that the recursion is what helps us to "shift" the characters.<br>
+            In each loop of the for loop, we obtain a character from the suffix:<br>
+            <pre>prefix.concat(suffix.charAt(i))</pre>
+            Plus, (1) we obtain a substring of the suffix from the first position of the suffix to the current character.<br>
+            Then, (2) we obtain a substring from the next character (following the current character) to the rest of the characters.<br>
+            <pre>
+                suffix.substring(0, i).concat(suffix.substring(i + 1, suffix.length))
+            </pre>
+            Below is a tree showing the recursion effects:<br>
+            <u>Note:</u> prefix (p). suffix (s).<br>
+            <div style="display: inline-block;" >
+                <div class="tree left">
+                    <ul>
+                        <li>
+                            <div>p:"", s:"abc"</div>
+                            <ul>
+                                <li>
+                                        <div>p:"a", s:"bc"</div>
+                                        <ul>
+                                            <li>
+                                                <div>p:"ab", s:"c"</div>  
+                                                <ul>
+                                                    <li>
+                                                        <div>p:"abc", s:""</div>                                               
+                                                    </li>
+                                                </ul>                                               
+                                            </li>
+                                            <li>
+                                                <div>p:"ac", s:"b"</div>   
+                                                <ul>
+                                                    <li>
+                                                        <div>p:"acb", s:""</div>                                               
+                                                    </li>
+                                                </ul>                                          
+                                            </li>
+                                        </ul>                                           
+                                    </li>                                    
+                                <li>
+                                    <div>p:"b", s:"ac"</div>
+                                    <ul>
+                                        <li>
+                                            <div>p:"ba", s:"c"</div>  
+                                            <ul>
+                                                <li>
+                                                    <div>p:"bac", s:""</div>                                               
+                                                </li>
+                                            </ul>                                               
+                                        </li>
+                                        <li>
+                                            <div>p:"bc", s:"a"</div>   
+                                            <ul>
+                                                <li>
+                                                    <div>p:"bca", s:""</div>                                               
+                                                </li>
+                                            </ul>                                          
+                                        </li>
+                                    </ul>                                             
+                                </li>                                    
+                                <li>
+                                    <div>p:"c", s:"ab"</div>  
+                                    <ul>
+                                        <li>
+                                            <div>p:"ca", s:"b"</div>  
+                                            <ul>
+                                                <li>
+                                                    <div>p:"cab", s:""</div>                                               
+                                                </li>
+                                            </ul>                                               
+                                        </li>
+                                        <li>
+                                            <div>p:"cb", s:"a"</div>   
+                                            <ul>
+                                                <li>
+                                                    <div>p:"cba", s:""</div>                                               
+                                                </li>
+                                            </ul>                                          
+                                        </li>
+                                    </ul>                                          
+                                </li>    
+                            </ul>
+                        </li>
+                    </ul>
+                </div>                                 
+            </div>                
+        </p>
+        <pre >["abc", "acb", "bac", "bca", "cab", "cba"]</pre>        
+        Click: <button onclick="getPermutations()">Get Permutations</button><br>
+        <div id="log"></div>        
+        <script type="text/javascript" src="../../../Assets/AppendMainToBody.js"></script>        
+    </body>
+</html>

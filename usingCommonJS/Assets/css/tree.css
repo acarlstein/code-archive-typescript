@@ -1,0 +1,115 @@
+.tree {
+	margin-top: -20px;
+}
+  
+.tree ul, .tree tr {
+	margin: 0;
+	padding: 0;
+}
+
+.tree ul {
+	position: relative;
+	padding-top: 20px; 	/* Padding between depths */
+}
+
+/* Each tree node space */
+.tree li {
+	position: relative;	
+	float: left; 
+	padding: 21px 5px 0 5px;	
+	list-style-type: none; /* Remove bullets symbols */
+	text-align: center;
+}
+
+/* 
+	Top line connector.	
+	Horizontal line that connect to vertical lines of nodes.
+	Note that we only draw the top border of the box to obtain the effect.
+*/
+.tree li::before, 
+.tree li::after {
+	position: absolute; 
+	top: 0; 
+	right: 50%; 
+	width: 50%; 
+	height: 20px;
+	content: '';	
+	border-top: 2px solid black;
+}
+
+
+/* Left line connector */
+.tree li::after {
+	right: auto; 
+	left: 50%;
+	border-left: 1px solid black;
+}
+
+
+/* Removing space from the top of single children */
+.tree li:only-child { 
+	padding-top: 0;
+}
+
+/* 
+	Removing left connector from first child and right connector from last child.
+	Else, we will end with a line in the middle of the nodes.
+*/
+.tree li:first-child::before, 
+.tree li:last-child::after {
+	border-width: 0;
+	border-style: none;
+}
+
+/*
+	Right line connector.
+	Adding back the vertical connector to the last nodes.
+*/
+.tree li:last-child::before {
+	border-right: 1px solid black;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+}
+
+/* Removing left and right connectors when there are no sibling nodes */
+.tree li:only-child::before,
+.tree li:only-child::after {
+	display: none;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before {
+	position: absolute; 
+	top: 0; 
+	left: 50%;
+	width: 0; 
+	height: 20px;
+	content: '';	
+	border-left: 1px solid black;
+}
+
+/*
+	Round the nodes.
+*/
+.tree li div {
+	display: inline-block;
+	padding: 7px 10px;
+	border: 2px solid black;
+	background: yellow;	
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+/* Set font of nodes */
+.tree li div {
+	font-family: arial, verdana, tahoma;
+	font-size: 10px;
+	font-weight: bold;
+	color: black;
+}

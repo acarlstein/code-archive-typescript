@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: Math: Subsets</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Exercise: Math: Subsets">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../Assets/css/default.css">
+        <link rel="stylesheet" type="text/css" href="../../../Assets/css/tree.css">
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: Math: Subsets</h1>
+        <p>
+            A set is a well-defined collection of objects whcih normally share a common characteristic.<br>
+            A subset is a portion of a set which share some common elements.
+        </p>        
+        <p>
+            Assume you are given a set of numbers and you are asked to create a function.<br>
+            The function should return all possible distintic subsets and ensure that no duplicate subsets are returned.
+            For example:
+        </p>
+        
+        <pre>
+            let set : number[] = [1, 2, 3];
+            return [[], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]];
+        </pre>
+        <p>
+            In this case, the number of subsets should be 2<sup>n</sup> = 2<sup>3</sup> = 8 subsets.<br>
+            Another approach is to analyze this problem as it would be a tree:            
+        </p>
+        <div style="display: inline-block;">
+            <div class="tree left">
+                <ul>
+                    <li>
+                        <div>[ ]</div>
+                        <ul>
+                            <li>
+                                <div>[ ]</div>
+                                <ul>
+                                    <li>
+                                        <div>[ ]</div>
+                                        <ul>
+                                            <li>
+                                                <div>[ ]</div>
+                                            </li>
+                                            <li>
+                                                <div>[3]</div>
+                                            </li>
+                                        </ul> 
+                                    </li>
+                                    <li>
+                                        <div>[2]</div>
+                                        <ul>
+                                            <li>
+                                                <div>[2]</div>
+                                            </li>
+                                            <li>
+                                                <div>[2, 3]</div>
+                                            </li>
+                                        </ul> 
+                                    </li>
+                                </ul>        
+                            </li>
+                            <li>
+                                <div>[1]</div>
+                                <ul>
+                                    <li>
+                                        <div>[1]</div>
+                                        <ul>
+                                            <li>
+                                                <div>[1]</div>
+                                            </li>
+                                            <li>
+                                                <div>[1, 3]</div>
+                                            </li>
+                                        </ul> 
+                                    </li>
+                                    <li>
+                                        <div>[1, 2]</div>
+                                        <ul>
+                                            <li>
+                                                <div>[1, 2]</div>
+                                            </li>
+                                            <li>
+                                                <div>[1, 2, 3]</div>
+                                            </li>
+                                        </ul> 
+                                    </li>
+                                </ul>                                            
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>             
+        </div>
+
+        <p>Hint: The solution can be built recursively.</p>
+        <p>Time Complexity Expected: O(2<sup>n</sup>)</p>
+        <p>Space Complexity Expected: O(1)</p>
+
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>
+            <u>Explanation:</u><br />
+            First, we sort the array of strings.
+            Then, we do a comparison of the first and last elements.
+        </p>
+        <script type="text/javascript" src="../../../Assets/AppendMainToBody.js"></script>        
+    </body>
+</html>

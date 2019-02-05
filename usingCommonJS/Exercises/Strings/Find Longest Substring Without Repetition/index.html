@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise: String: Find Longest Substring without Repetition</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Find Longest Substring without Repetition">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,TypeScript">
+        <meta name="author" content="Alejandro G. Carlstein Ramos Mejia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Main.js"></script>
+    </head>
+    <body>
+        <h1>Exercise: String: Find Longest Substring without Repetition</h1>
+        <p>
+            You are given an array of strings. <br> 
+            For each string, you must find the longest substring in which characters are not repeated.
+        </p>        
+        <p>
+            For example, the string "abccc" will produce the longest substring "ab" because the character c is repeated. <br />
+            The string "abcabcdd" will produce the longest substring "abcd"; therefore, the length of the substring is 4.<br />
+            The string "ccccc" will produce the longest substring "c"; therefore, the length of the substring is 1.<br />
+            The string "paakea" will produce the longest substring "ake"; therefore, the length of the substring is 3.<br />
+            <u>Note:</u> "pake" would be a subsequence but not a longest substring.
+        </p>
+        
+        <pre>
+            let strArr : string[] = ["abcabcdd", "ccccc", "paakea"];
+            return [4, 1, 3]
+        </pre>
+    
+        <p>Time Complexity Expected: O(N) or better for each string processed</p>
+        <p>Space Complexity Expected: O(N) or better for each string processed</p>
+
+        <p>
+            <i>Press F12, access the console and refresh the page to run script.</i>
+        </p>
+
+        <b>Solution:</b>
+        <p>Time Complexity (to find each substring): O(N). The array is traversed once for each string.</p>
+        <p>Space Complexity (to find each substring): O(N).</p>
+        <p>
+            <u>Explanation:</u><br />
+            We use a hashmap to store the maximum count of characters for each character (key).<br />
+            As we move from right to left throw the string, one character at the time, we update the hashmap.<br />
+            If a character already exists in the hashmap, we increase the counter and move to the next character to the left.<br />
+            The variable count is used as a pointer of position and counter.
+        </p>
+        <script type="text/javascript" src="../../../Assets/AppendMainToBody.js"></script>        
+    </body>
+</html>
